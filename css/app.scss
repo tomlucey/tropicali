@@ -1,0 +1,43 @@
+@import "reset";
+@import "typo";
+
+$primary-color:#8c982c;
+$body-font: "Jost";
+$body-size: 24px;
+$mq-medium: 600px;
+
+@mixin drop-shadow($color) {
+    box-shadow: 0 0 10px $color;
+}
+
+@mixin mq($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin vertically-middle () {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    font-family: $body-font;
+    color:#ffffff;
+    background-color: $primary-color;    
+    padding: 40px;
+    line-height: 1.25;
+    font-size: $body-size;
+
+    height: 100vh;
+    @include vertically-middle();
+}
+
+section {
+    width: 500px;
+    p {
+        margin: 24px 0 0 0;
+        }
+}
